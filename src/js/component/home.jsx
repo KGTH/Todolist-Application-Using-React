@@ -11,6 +11,7 @@ const Home = () => {
 	const [inputValue, setinputValue] = useState("");
 	const [value, setValue]= useState([]);
 	
+	
 
 	const change =(event)=>{
 		setinputValue(event.target.value)
@@ -24,8 +25,16 @@ const Home = () => {
 		
 	} }
 
-	
+	/*const bottonDelete =(e)=>{
+				const filtered = value.filter((value, currenteIndez) => index != currenteIndez)
+		setValue(filtered)*/
 
+
+const bottonDelete =(e)=>{
+	const filtered = value.filter(value =>value.e != e )
+	setValue(filtered)
+
+}
 
 
 	return (
@@ -34,14 +43,17 @@ const Home = () => {
 						
 					<input type="text" onChange={change} onKeyDown={keyDown} value={inputValue} placeholder="write something..... "/>
 					
-					
-					{value.map((value)=>{
-							return <Imput name={value}/>
-							
-							
+					{value.map((value, index)=>{
+							return <Imput name={value}
+									key={index}
+									bottonDelete={bottonDelete}		
+							/>
+									
 					})}
-					
+				
+				<div ><strong>El numero de tareas es : {value.length}</strong></div>
 					</div>
+					
 
 	);
 };
@@ -49,4 +61,4 @@ const Home = () => {
 export default Home;
 
 
-//<button type="button" class="btn-close" aria-label="Close"></button>
+

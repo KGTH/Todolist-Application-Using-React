@@ -13,9 +13,11 @@ const Imput =(props)=>{
 			setMouse(true)
 	}
 
+	
+
 return (
                 < div className="input-value"  onMouseOut={mouseOut} onMouseOver={mouseOver}>
-					{props.name}<button type="button" className={mouse ? "" : "d-none"} >X</button>
+					{props.name}<button type="button" className={mouse ? "" : "d-none"} onClick={()=>{props.bottonDelete(props.value)}} >X</button>
 					</div >
 
 
@@ -24,3 +26,6 @@ return (
 }
 
 export default Imput ;
+
+
+
