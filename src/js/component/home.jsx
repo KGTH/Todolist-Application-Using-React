@@ -31,14 +31,13 @@ const Home = () => {
 
 
 const bottonDelete =(e)=>{
-	const filtered = value.filter(value =>value.e != e )
+	const filtered = value.filter(item =>item != e)
 	setValue(filtered)
+	
 
 }
 
-
 	return (
-
 					<div className="container ">
 						
 					<input type="text" onChange={change} onKeyDown={keyDown} value={inputValue} placeholder="write something..... "/>
@@ -46,15 +45,13 @@ const bottonDelete =(e)=>{
 					{value.map((value, index)=>{
 							return <Imput name={value}
 									key={index}
-									bottonDelete={bottonDelete}		
-							/>
-									
+									Delete={bottonDelete}		
+							/>			
 					})}
 				
 				<div ><strong>El numero de tareas es : {value.length}</strong></div>
 					</div>
 					
-
 	);
 };
 
